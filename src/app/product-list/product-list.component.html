@@ -1,0 +1,61 @@
+<!-- <div class="row">
+
+    <app-product  class="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product  class="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product  class="col-lg-4 col-md-6 mb-4"></app-product>
+
+
+  </div> -->
+
+  <table border="1px"> 
+    <tr>
+      <th>Tên ten san pham</th>
+      <th>Giá sản phẩm</th>
+      <th >Mô tả sản phẩm</th>
+      <th >Chi tiết sản phẩm</th>
+      <th >xóa sản phẩm</th>
+      
+      
+      
+    </tr>
+    <tr  *ngFor="let product of products">
+      <td >{{product.name}}</td>
+      <td >{{product.price}}</td>
+      <td >{{product.desc}}</td>
+     
+      <td  ><button (click)="showDetail(product)"> chi tiết</button></td>
+      <td  ><button (click)="remove(product.id)"> Xóa sản phẩm</button></td>
+     
+    </tr>
+  </table>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngIf="selected"
+    >
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top"src="{{selected.img}}" alt=""></a>
+  
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="#">{{selected.name}}</a>
+      </h4>
+      <h5>${{selected.price}}</h5>
+      <p class="card-text">{{selected.desc}}</p>
+    </div>
+      </div>
+    </div>
+</div>
+
+<table border="1px">
+  <tr>
+    <th>Tên ten san pham</th>
+    <th>giá sản phẩm</th>
+    <th >Mô tả</th>
+    
+    
+  </tr>
+  <tr>
+    <td *ngIf="selected">{{selected.name}}</td>
+    <td *ngIf="selected">{{selected.price}}</td>
+    <td *ngIf="selected">{{selected.desc}}</td>
+  </tr>
+</table>
